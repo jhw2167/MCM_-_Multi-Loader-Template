@@ -52,15 +52,15 @@ subprojects {
 
     dependencies {
         //custom
-        implementation 'com.google.code.gson:gson:${gson_version}'
-        implementation 'org.antlr:antlr4-runtime:${antlr_version}'
-        implementation 'org.xerial:sqlite-jdbc:${sqlite_version}'
+        implementation "com.google.code.gson:gson:${gson_version}"
+        implementation "org.antlr:antlr4-runtime:${antlr_version}"
+        implementation "org.xerial:sqlite-jdbc:${sqlite_version}"
     }
 
     tasks.withType(JavaCompile).configureEach {
     
         it.options.encoding = 'UTF-8'
-        it.options.getRelease().set(17)
+        it.options.getRelease().set(21)
     }
 
     processResources {

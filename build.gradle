@@ -1,9 +1,11 @@
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT' apply(false)
+    id 'fabric-loom' version "${loom_version}" apply(false)
     id 'net.minecraftforge.gradle' version '[6.0,6.2)' apply(false)
     id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT' apply(false)
     id("org.spongepowered.mixin") version "0.7-SNAPSHOT" apply(false)
 }
+
+allprojects { apply plugin: "idea" }
 
 subprojects {
     apply plugin: 'java'
@@ -39,6 +41,7 @@ subprojects {
     }
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven {
             name = 'Sponge / Mixin'
@@ -48,6 +51,12 @@ subprojects {
             name = 'BlameJared Maven (JEI / CraftTweaker / Bookshelf)'
             url = 'https://maven.blamejared.com'
         }
+        maven {
+            url "https://maven.twelveiterations.com/repository/maven-public/"
+            content {
+                includeGroup "net.blay09.mods"
+            }
+        }
     }
 
     dependencies {
@@ -55,12 +64,14 @@ subprojects {
         implementation "com.google.code.gson:gson:${gson_version}"
         implementation "org.antlr:antlr4-runtime:${antlr_version}"
         implementation "org.xerial:sqlite-jdbc:${sqlite_version}"
+
+        //Common (mojmap): implementation "net.blay09.mods:balm-common:${balm_version}"
+        //Forge: implementation fg.deobf("net.blay09.mods:balm-forge:${balm_version}")
+        //Fabric: modImplementation "net.blay09.mods:balm-fabric:${balm_version}"
     }
 
     tasks.withType(JavaCompile).configureEach {
-    
         it.options.encoding = 'UTF-8'
-        it.options.getRelease().set(21)
     }
 
     processResources {

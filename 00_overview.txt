@@ -32,12 +32,17 @@ Setup
 	- Mod Version
 	- Mod 
 
-7. Add dependencies to your gradle
-	- some fundamental dependencies are included within the build.gradle
+7. Clean directory and setup mixin files
+	- ./gradlew cleanIdea
+	- src/main/resources has two mixin files you must rename after your modId
 
 8. Setup your java code
 	- Determine you package names
 	- Assign the correct mod_id to your ForgeMain method
+	- mods.toml will throw error
+
+9. Add dependencies to your gradle
+	- some fundamental dependencies are included within the build.gradle
 
 
 
@@ -59,4 +64,20 @@ Appendix
 	- Good to clarify, not essential
 
 - runtimeOnly fg.deobf("dependency")
+
+
+Java 21
+---
+- Set your JDK to Java 21
+- set your Gradle compat to Java 21
+- Set your toolchain in gradle file to java 21
+- set mixin compat to java 21
+
+A number of errors occur
+
+	- error with the mixin compata of JAVA_21 not being supported
+
+	- [[Unsupported JNI version detected in LWJGL]] - crashes if attempting to debug
+
+	- mods.toml missing metadata for modid
 

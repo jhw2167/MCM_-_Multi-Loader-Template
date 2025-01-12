@@ -1,8 +1,8 @@
-package com.example.examplemod;
+package com.holybuckets.foundation;
 
 import net.fabricmc.api.ModInitializer;
 
-public class ExampleMod implements ModInitializer {
+public class FoundationMain implements ModInitializer {
     
     @Override
     public void onInitialize() {

@@ -1,8 +1,7 @@
-package com.example.examplemod.mixin;
+package com.holybuckets.foundation.mixin;
 
-import com.example.examplemod.Constants;
+import com.holybuckets.foundation.Constants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

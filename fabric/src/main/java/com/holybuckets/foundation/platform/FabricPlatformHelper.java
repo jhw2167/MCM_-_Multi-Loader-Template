@@ -1,6 +1,6 @@
-package com.example.examplemod.platform;
+package com.holybuckets.foundation.platform;
 
-import com.example.examplemod.platform.services.IPlatformHelper;
+import com.holybuckets.foundation.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class FabricPlatformHelper implements IPlatformHelper {

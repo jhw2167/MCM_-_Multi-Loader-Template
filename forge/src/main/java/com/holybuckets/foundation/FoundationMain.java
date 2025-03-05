@@ -1,5 +1,6 @@
 package com.holybuckets.foundation;
 
+import net.blay09.mods.balm.api.Balm;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod( Constants.MOD_ID)
@@ -7,7 +8,8 @@ public class FoundationMain {
 
     public FoundationMain() {
         super();
-        CommonClass.init();
+        Balm.initialize(Constants.MOD_ID, CommonClass::init);
+        //DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> BalmClient.initialize(Constants.MOD_ID, Client::initialize));
     }
 
 }

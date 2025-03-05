@@ -1,5 +1,6 @@
 package com.holybuckets.foundation;
 
+import net.blay09.mods.balm.api.Balm;
 import net.fabricmc.api.ModInitializer;
 
 //YOU NEED TO UPDATE NAME OF MAIN CLASS IN fabric.mod.json
@@ -14,7 +15,6 @@ public class FoundationMain implements ModInitializer {
         // project.
 
         // Use Fabric to bootstrap the Common mod.
-        Constants.LOG.info("Hello Fabric world!");
-        CommonClass.init();
+        Balm.initialize(Constants.MOD_ID, CommonClass::init);
     }
 }

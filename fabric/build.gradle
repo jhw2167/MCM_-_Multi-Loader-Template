@@ -20,6 +20,16 @@ dependencies {
     modImplementation ("net.blay09.mods:balm-fabric:${balm_version}") {
         transitive = false
     }
+	
+	 modImplementation ("net.blay09.mods:balm-fabric:${balm_version}") {
+        transitive = false
+        changing = true
+    }
+
+    modImplementation ("com.holybuckets.foundation:HBs_Foundation-fabric-${minecraft_version}:${foundation_version}") {
+        transitive = false
+        changing = true
+    }
 
 }
 
@@ -69,7 +79,11 @@ publishing {
     }
     repositories {
         maven {
-            url "file://" + System.getenv("local_maven")
+            name = "flatDirRelease"
+            url = uri("${rootProject.findProperty("release_dir") ?: "$buildDir/published"}")
+            metadataSources {
+                artifact()
+            }
         }
     }
 }

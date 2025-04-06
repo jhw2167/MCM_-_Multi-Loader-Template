@@ -77,12 +77,12 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("net.blay09.mods:balm-forge:${balm_version}")
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 	
-	    implementation fg.deobf("net.blay09.mods:balm-forge:${balm_version}") {
+    implementation fg.deobf("net.blay09.mods:balm-forge:${balm_version}") {
         changing = true
+        transitive = false
     }
 
     implementation fg.deobf("com.holybuckets.foundation:HBs_Foundation-forge-${minecraft_version}:${foundation_version}") {

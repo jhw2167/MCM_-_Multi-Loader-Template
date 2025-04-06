@@ -1,6 +1,8 @@
 package com.holybuckets.foundation;
 
+import com.holybuckets.foundation.client.ModRenderers;
 import com.holybuckets.foundation.platform.Services;
+import net.blay09.mods.balm.api.client.BalmClient;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
 
@@ -32,4 +34,7 @@ public class CommonClass {
 
     }
 
+    public static void initClient() {
+        ModRenderers.clientInitialize(BalmClient.getRenderers());
+    }
 }

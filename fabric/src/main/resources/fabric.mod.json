@@ -16,10 +16,10 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.holybuckets.foundation.FoundationMain"
+            "com.holybuckets.foundation.TemplateMain"
         ],
         "client": [
-            "com.holybuckets.foundation.FoundationMainClientFabric"
+            "com.holybuckets.foundation.TemplateMainClientFabric"
         ]
     },
     "mixins": [

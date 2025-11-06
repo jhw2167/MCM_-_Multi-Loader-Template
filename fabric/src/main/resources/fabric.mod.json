@@ -19,7 +19,7 @@
             "com.holybuckets.template.TemplateMain"
         ],
         "client": [
-            "com.holybuckets.template.TemplateMainClientFabric"
+            "com.holybuckets.template.TemplateMainClient"
         ]
     },
     "mixins": [

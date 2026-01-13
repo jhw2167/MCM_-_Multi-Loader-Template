@@ -36,3 +36,9 @@ mandatory=true
 versionRange="[${foundation_version},)"
 ordering="NONE"
 side="BOTH"
+[[dependencies.${mod_id}]]
+modId="create"
+mandatory=false
+versionRange="[${create_version},)"
+ordering="NONE"
+side="BOTH"

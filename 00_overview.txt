@@ -48,6 +48,84 @@ Setup
 
 
 
+Converting to 1.21 Fabric/Forge
+---
+
+	1. Files to update:
+	- gradle.properties
+	- settings.gradle
+	
+
+	2. Update to Java 25
+
+	3. Added fabric and Neoforge versions
+		- 
+
+	4. Creating ResourceLocations has changed
+		- use LOC from HBUtil
+
+	5. Block method "use" has been repurposed:
+		- useItemOn
+		- useWithoutItem
+		- Return ItemInteractionResult now
+
+	6. Networking changed. 
+		- All custom payloads must implement CustomPacketPayload
+		- All classes must return a Type defined by their resource location
+		- All classes must maintain a Codec object that will be passed to the registration layer
+
+	7. Serializing data now changed
+		- load -> loadAdditional
+		- save -> saveAdditional
+
+	8. Copying block behavior properties
+		- .copy -> BlockBehaviour.Properties.ofFullCopy(
+		- 
+
+	9. Block Entities now must implement:
+		@Override
+	    protected MapCodec<? extends BaseEntityBlock> codec() {
+	       return null;
+	    }
+
+	--- Neoforge conversion
+	10. Commands:
+	update mod.json, platform and mixins file
+	copy forge to neo ->
+	replace instance of forge with neo -> 
+	./folderStreamEditRecurse.sh MCM_000_HBs-Foundation/neoforge/src/main/java/com/holybuckets/ minecraftneoforge neoforged
+	
+	
+
+	# NeoForge
+neoforge_version = 21.1.8
+neoforge_version_range = [21-beta,)
+neoforge_loader_version_range = [1,)
+
+# Fabric
+fabric_version = 0.116.7+1.21.1
+fabric_loader_version = 0.17.3
+loom_version=1.7-SNAPSHOT
+
+
+4. Added Minecraft version range and java version, updated minecraft version:
+	minecraft_version_range=[1.21.1, 1.22)
+	minecraft_version=1.21.1
+	java_version=25
+
+5. Remove loom plugin from build.gradle
+
+6. Code Fixes (1.21)
+
+	- import net.minecraft.world.level.chunk.ChunkStatus; import net.minecraft.world.level.chunk.status.ChunkStatus;
+	- new ResourceLocation( , ResourceLocation.fromNamespaceAndPath(
+
+
+AI Instructions:
+
+HB_Fabric-1.21
+
+
 
 Appendix
 ---

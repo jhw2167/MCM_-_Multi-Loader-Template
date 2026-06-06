@@ -3,12 +3,10 @@ package com.holybuckets.template;
 import com.holybuckets.foundation.event.BalmEventRegister;
 import com.holybuckets.template.block.ModBlocks;
 import com.holybuckets.template.block.be.ModBlockEntities;
-import com.holybuckets.template.client.ModRenderers;
 import com.holybuckets.template.item.ModItems;
 import com.holybuckets.template.menu.ModMenus;
 import com.holybuckets.template.platform.Services;
 import net.blay09.mods.balm.api.Balm;
-import net.blay09.mods.balm.api.client.BalmClient;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
 
@@ -50,9 +48,5 @@ public class CommonClass {
     public static void sample()
     {
 
-    }
-
-    public static void initClient() {
-        ModRenderers.clientInitialize(BalmClient.getRenderers());
     }
 }
